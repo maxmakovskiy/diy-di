@@ -1,8 +1,8 @@
 package ch.maxmakovskiy;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
 
 public class DITest {
 
@@ -14,5 +14,4 @@ public class DITest {
     void alwaysPassingTest() {
         assertEquals(2, addOne(1));
     }
-
 }
