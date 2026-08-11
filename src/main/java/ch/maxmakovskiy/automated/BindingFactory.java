@@ -8,7 +8,8 @@ package ch.maxmakovskiy.automated;
  * Binding Factory gives the way to avoid declaring concrete classes in CoffeeMaker
  * allowing just to declare interfaces (contracts) and inject the implementations latter
  * */
-public class BindingFactory<RequestedType, ProvidedType extends RequestedType> implements Factory<RequestedType> {
+public class BindingFactory<RequestedType, ProvidedType extends RequestedType>
+        implements Factory<RequestedType> {
 
     private final Class<ProvidedType> providedType;
 

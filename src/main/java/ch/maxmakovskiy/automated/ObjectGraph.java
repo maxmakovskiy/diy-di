@@ -1,6 +1,5 @@
 package ch.maxmakovskiy.automated;
 
-import java.lang.Class;
 import java.util.List;
 
 // Also known as Injector, Component and Container
@@ -17,7 +16,7 @@ public class ObjectGraph {
      * Creates instance of requested type
      *
      * @param requestedType type of instance
-     * */
+     */
     public <T> T get(Class<T> requestedType) {
         for (Module module : modules) {
             Factory<T> factory = module.get(requestedType);
@@ -28,8 +27,6 @@ public class ObjectGraph {
                 return factory.get(this);
             }
         }
-        throw new IllegalStateException("No factory found for "
-                + requestedType.getSimpleName());
+        throw new IllegalStateException("No factory found for " + requestedType.getSimpleName());
     }
-
 }

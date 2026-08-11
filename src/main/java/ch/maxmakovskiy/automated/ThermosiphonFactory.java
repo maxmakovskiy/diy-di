@@ -1,9 +1,9 @@
 package ch.maxmakovskiy.automated;
 
-import ch.maxmakovskiy.manual.Thermosiphon;
 import ch.maxmakovskiy.manual.CoffeeLogger;
 import ch.maxmakovskiy.manual.ElectricHeater;
 import ch.maxmakovskiy.manual.Heater;
+import ch.maxmakovskiy.manual.Thermosiphon;
 
 public class ThermosiphonFactory implements Factory<Thermosiphon> {
     @Override

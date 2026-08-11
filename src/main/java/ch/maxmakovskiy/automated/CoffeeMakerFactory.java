@@ -1,6 +1,9 @@
 package ch.maxmakovskiy.automated;
 
-import ch.maxmakovskiy.manual.*;
+import ch.maxmakovskiy.manual.CoffeeLogger;
+import ch.maxmakovskiy.manual.CoffeeMaker;
+import ch.maxmakovskiy.manual.Heater;
+import ch.maxmakovskiy.manual.Pump;
 
 public class CoffeeMakerFactory implements Factory<CoffeeMaker> {
     @Override

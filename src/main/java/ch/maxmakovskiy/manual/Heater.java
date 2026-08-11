@@ -1,4 +1,3 @@
 package ch.maxmakovskiy.manual;
 
-public interface Heater {
-}
+public interface Heater {}

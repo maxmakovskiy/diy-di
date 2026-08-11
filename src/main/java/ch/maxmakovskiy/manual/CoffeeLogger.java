@@ -1,4 +1,3 @@
 package ch.maxmakovskiy.manual;
 
-public class CoffeeLogger {
-}
+public class CoffeeLogger {}

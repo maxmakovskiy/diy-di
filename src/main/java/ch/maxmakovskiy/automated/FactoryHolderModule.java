@@ -14,37 +14,36 @@ public class FactoryHolderModule implements Module {
         this.factories = new HashMap<>();
     }
 
-    /**
-     * Returns factory responsible for creating instance of requested type
-     * */
+    /** Returns factory responsible for creating instance of requested type */
     @Override
     public <T> Factory<T> get(Class<T> requestedType) {
+        // NOTE:
+        // We do unchecked cast as we do not know exact generic type in `factories`
+        // Hence wildcard is there
         return (Factory<T>) factories.get(requestedType);
     }
 
-    /**
-     * Adds mapping type-factory to the module
-     * */
+    /** Adds mapping type-factory to the module */
     public <T> void install(Class<T> requestedType, Factory<T> factory) {
         factories.put(requestedType, factory);
     }
 
     /**
-     * Adds mapping type-factory to the module additionally ensuring
-     * that the factory produces desired instance no more than once
+     * Adds mapping type-factory to the module additionally ensuring that the factory produces
+     * desired instance no more than once
      *
      * @see SingletonFactory
-     * */
+     */
     public <T> void installSingleton(Class<T> requestedType, Factory<T> factory) {
         install(requestedType, new SingletonFactory<>(factory));
     }
 
     /**
-     * Adds meta mapping interface-class to facilitate eventual resolution of interface
-     * to the concrete implementation (class) and allowing later to identify factory producing it
+     * Adds meta mapping interface-class to facilitate eventual resolution of interface to the
+     * concrete implementation (class) and allowing later to identify factory producing it
      *
      * @see BindingFactory
-     * */
+     */
     public <RequestedType, ProvidedType extends RequestedType> void bind(
             Class<RequestedType> requestedType, Class<ProvidedType> providedType) {
 
