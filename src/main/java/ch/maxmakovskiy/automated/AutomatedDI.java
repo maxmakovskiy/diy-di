@@ -1,9 +1,8 @@
-package ch.maxmakovskiy;
+package ch.maxmakovskiy.automated;
 
-import ch.maxmakovskiy.automated.*;
 import ch.maxmakovskiy.manual.*;
 
-public class DI {
+public class AutomatedDI {
     public static void main(String[] args) {
         var module = new FactoryHolderModule();
 

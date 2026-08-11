@@ -15,7 +15,8 @@ public class CoffeeMaker {
         if (logger != null && heater != null && pump != null) {
             System.out.println("Brewing coffee...");
         } else {
-            System.out.println("Oops..Something went wrong");
+            System.err.println("Oops..Something went wrong");
+            System.err.println("Some dependencies are missing");
         }
     }
 
